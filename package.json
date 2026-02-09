@@ -1,5 +1,5 @@
 {
-    "name": "alien-signals-gs",
+    "name": "alien-signals-getset",
     "scripts": {
         "start": "tsx start.ts"
     },
