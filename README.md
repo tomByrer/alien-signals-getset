@@ -18,14 +18,15 @@ import { signal, computed, effect } from 'alien-signals-getset';
 const count = signal(1);
 const doubleCount = computed(() => count.get() * 2);
 
-effect(() => {
+effect(() => { // autoruns
   console.log(`Count is: ${count.get()}`);
 }); // Console: Count is: 1
 
 console.log(doubleCount.get()); // 2
 
-count.set(2); // Console: Count is: 2
+count.set(3); // Console: Count is: 3
 
-console.log(doubleCount.get()); // 4
+console.log(doubleCount.get()); // 6
 ```
-Note, the `get`/`set` methods make it partly compatable with JavaScript [`Map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#instance_methods)  Those & `effect()` is all I need for my Finite State Machine usage in [state-shifter](https://github.com/tomByrer/state-shifter) .
+
+Note, the `get`/`set` methods make it partly compatible with JavaScript [`Map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#instance_methods)  Those & `effect()` is all I need for my Finite State Machine usage in [state-shifter](https://github.com/tomByrer/state-shifter).
